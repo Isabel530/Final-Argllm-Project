@@ -1,0 +1,13 @@
+dataset,miscoverage,scope,n_claims,n_pairs,n_answered_pairs,pair_coverage,selective_reference_accuracy,selective_pairwise_accuracy,marginal_pair_set_coverage,simultaneous_claim_coverage,all_pairs_answered_rate,complete_reference_order_rate,mean_runs_per_claim,mean_score_generations_per_claim,generation_saving_vs_10_runs
+external_e9,0.05,all,52,312,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.05,broad,26,156,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.05,near_tie,26,156,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.1,all,52,312,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.1,broad,26,156,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.1,near_tie,26,156,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.2,all,52,312,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.2,broad,26,156,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+external_e9,0.2,near_tie,26,156,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+internal_test,0.05,all,50,300,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+internal_test,0.1,all,50,300,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0
+internal_test,0.2,all,50,300,0,0.0,,,1.0,1.0,0.0,0.0,10.0,40.0,0.0

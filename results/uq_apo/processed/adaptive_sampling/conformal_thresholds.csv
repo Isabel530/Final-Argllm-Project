@@ -1,0 +1,4 @@
+miscoverage,nominal_coverage,threshold,n_calibration_claims,calibration_unit
+0.05,0.95,0.9565217391304348,29,claim_max_over_pairs_and_checkpoints
+0.1,0.9,0.9565217391304348,29,claim_max_over_pairs_and_checkpoints
+0.2,0.8,0.9565217391304348,29,claim_max_over_pairs_and_checkpoints

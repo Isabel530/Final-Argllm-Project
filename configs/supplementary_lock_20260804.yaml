@@ -1,0 +1,91 @@
+schema_version: 1
+locked_at: "2026-08-04T09:52:28+01:00"
+status: prospective_for_supplementary_runs_but_post_internal_winner_observation
+
+frozen_winner:
+  prompt_id: p_53a4acbe525c
+  registry: results/uq_apo/frozen/qwen_frozen_winner.jsonl
+  registry_sha256: ae7fe03c20adbef7cee02e48e06b5bc7f19b25dc0d4142babc30bd921319198a
+  may_be_reselected_or_rewritten: false
+
+already_observed_at_lock:
+  qwen_internal_winner_pairwise_accuracy: 0.9416666666666668
+  mistral_transfer_means_observed: true
+  note: >-
+    The supplementary Qwen manual controls and full-train audit are not
+    represented as prospectively registered confirmatory experiments.
+
+qwen_internal_manual_controls:
+  designation: supplementary_locked_baseline_comparison
+  split: internal_test
+  claims: 50
+  seeds: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+  prompt_ids:
+    direct: p_83adf7318fd5
+    role: p_da4eef59b8ac
+    rubric: p_0086c8edb3b1
+    role_rubric: p_26918ada0c0a
+  generation:
+    model: qwen3_8b
+    decoding: hard
+    thinking: false
+    temperature: 0.7
+    top_p: 0.95
+  inference:
+    independent_unit: claim
+    bootstrap_resamples: 10000
+    permutation_resamples: 100000
+    random_seed: 42
+    alpha: 0.05
+    contrast_family:
+      - winner_vs_direct
+      - winner_vs_role
+      - winner_vs_rubric
+      - winner_vs_role_rubric
+    multiplicity: Holm within metric
+    metrics:
+      - pairwise_accuracy
+      - seed_flip_rate
+      - score_variance
+      - mean_tokens
+      - mean_seconds
+
+full_train_audit:
+  designation: post_selection_full_training_robustness_audit
+  may_affect_winner: false
+  split: apo_train
+  claims: 70
+  seeds: [42, 1024, 2026, 31415, 27182]
+  prompt_ids: [p_53a4acbe525c, p_26953e457823]
+
+mistral_paired_analysis:
+  independent_unit: claim
+  comparisons: [winner_vs_direct, winner_vs_rubric]
+  bootstrap_resamples: 10000
+  permutation_resamples: 100000
+  multiplicity: Holm within metric
+
+external_e9:
+  primary_model: qwen3_8b
+  prompts:
+    - direct
+    - role
+    - rubric
+    - role_rubric
+    - frozen_winner
+  seeds: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+  eligibility:
+    - independent claims and arguments not derived from the 149-claim dataset
+    - human argument quality scores or pairwise/ranking labels
+    - recoverable claim/topic and stance or relation metadata
+    - research-usable licence and stable source
+    - no use in APO search, validation, or winner selection
+  pilot_rule: >-
+    Pilot items are used only for schema/label/format validation and are
+    excluded claim-wise from the formal external test.
+  primary_uq_transfer:
+    future_absolute_deviation: sampling_variance
+    future_reference_error: margin_uncertainty
+    calibration: no external refitting
+  exploratory_uq_transfer:
+    calibration: external claim-grouped cross-fitting

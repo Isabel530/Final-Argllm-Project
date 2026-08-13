@@ -1,0 +1,24 @@
+{
+  "raw": [
+    {
+      "path": "results/uq_apo/raw/qwen_internal_test.jsonl",
+      "sha256": "34a261a45f77e588a4c53c4e64480003121d1a536411248fcabb4fc90ac02547"
+    },
+    {
+      "path": "results/uq_apo/raw/qwen_manual_controls.jsonl",
+      "sha256": "299852bd26668f03e62919d2dcf517463ef2676814ff89e893c852c92ef973bf"
+    }
+  ],
+  "winner_id": "p_53a4acbe525c",
+  "baseline_ids": [
+    "p_83adf7318fd5",
+    "p_da4eef59b8ac",
+    "p_0086c8edb3b1",
+    "p_26918ada0c0a"
+  ],
+  "independent_unit": "claim",
+  "bootstrap_resamples": 10000,
+  "permutation_resamples": 100000,
+  "seed": 42,
+  "holm_family": "within scope and metric"
+}

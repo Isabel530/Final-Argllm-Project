@@ -1,0 +1,5 @@
+{
+  "generated_utc": "2026-08-09T12:24:33.784406+00:00",
+  "winner_prompt_id": "p_53a4acbe525c",
+  "note": "Derived only from processed result tables. Risk--coverage retains the lowest-uncertainty fraction within each of 252 complementary 5+5 partitions and then averages risk; partitions are not inferential units."
+}

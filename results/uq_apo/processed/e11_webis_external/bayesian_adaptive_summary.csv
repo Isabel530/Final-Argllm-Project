@@ -1,0 +1,5 @@
+prompt_id,scope,confidence_threshold,n_pairs,n_topics,n_answered_pairs,pair_coverage,selective_human_accuracy,selective_pairwise_accuracy,mean_runs_per_pair,generation_saving_vs_10_runs,cost_interpretation,coverage_guarantee
+p_53a4acbe525c,majority_decisive,0.6,4925,18,4449,0.9033502538071067,0.5291076646437401,0.6029444819060463,4.092385786802031,0.5907614213197969,pair_at_a_time_serving,none_empirical_bayesian_policy
+p_53a4acbe525c,majority_decisive,0.7,4925,18,4106,0.8337055837563452,0.5448124695567462,0.6077691183633707,4.505989847715736,0.5494010152284263,pair_at_a_time_serving,none_empirical_bayesian_policy
+p_53a4acbe525c,majority_decisive,0.8,4925,18,3599,0.7307614213197969,0.5662684078910809,0.6148930258405112,6.527918781725888,0.34720812182741123,pair_at_a_time_serving,none_empirical_bayesian_policy
+p_53a4acbe525c,majority_decisive,0.9,4925,18,3067,0.6227411167512691,0.586240626018911,0.6221062927942614,10.0,0.0,pair_at_a_time_serving,none_empirical_bayesian_policy

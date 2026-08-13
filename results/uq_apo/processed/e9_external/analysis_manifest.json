@@ -1,0 +1,25 @@
+{
+  "raw": {
+    "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/e9_external.jsonl",
+    "sha256": "e7f5235ac8cae730606c9935142c2d929b8834c304ae2ce0ae7716c25505a2f4"
+  },
+  "validation_raw": {
+    "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/validation.jsonl",
+    "sha256": "d00d40e870f58d46931501739dd0bb5c922c80777c96a1dfe5d1639b50852c37"
+  },
+  "winner_id": "p_53a4acbe525c",
+  "baseline_ids": [
+    "p_83adf7318fd5",
+    "p_da4eef59b8ac",
+    "p_0086c8edb3b1",
+    "p_26918ada0c0a"
+  ],
+  "independent_inference_unit": "source_topic",
+  "n_external_topics": 13,
+  "n_external_records": 52,
+  "primary_panel": "broad",
+  "near_tie_interpretation": "secondary uncertainty challenge; WA gaps may be too small for a strong gold-order claim",
+  "uq_partitions": 252,
+  "uq_calibration": "fit on internal validation and applied externally without refit",
+  "warning": "The 252 seed partitions are repeated views, not independent datasets. External results cannot change the frozen winner."
+}

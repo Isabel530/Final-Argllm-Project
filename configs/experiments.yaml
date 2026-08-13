@@ -1,0 +1,120 @@
+studies:
+  output_length_pilot:
+    dataset: datasets/5.15Dataset/true_false_uncertain_gen_gpt-5_ver_sonnet-4-5.jsonl
+    dataset_kind: main
+    models: [mistral_7b, qwen3_8b, gpt_oss_20b]
+    prompts: [direct, role, rubric, role_rubric]
+    decoding: [soft]
+    seeds: [42]
+    sample_size: 10
+    sample_seed: 2026
+    sample_by_stance:
+      support: 5
+      attack: 5
+    generation:
+      do_sample: true
+      temperature: 0.7
+      top_p: 0.95
+      repetition_penalty: 1.0
+      max_new_tokens: 512
+      max_new_tokens_by_mode:
+        no_think: 512
+        think: 512
+      thinking: [false, true]
+
+  output_length_natural_pilot:
+    dataset: datasets/5.15Dataset/true_false_uncertain_gen_gpt-5_ver_sonnet-4-5.jsonl
+    dataset_kind: main
+    models: [qwen3_8b, gpt_oss_20b]
+    prompts: [direct, role, rubric, role_rubric]
+    decoding: [soft]
+    seeds: [42]
+    sample_size: 10
+    sample_seed: 2026
+    sample_by_stance:
+      support: 5
+      attack: 5
+    generation:
+      do_sample: true
+      temperature: 0.7
+      top_p: 0.95
+      repetition_penalty: 1.0
+      max_new_tokens: context_window
+      thinking: true
+
+  decoding_validation:
+    dataset: datasets/5.15Dataset/true_false_uncertain_gen_gpt-5_ver_sonnet-4-5.jsonl
+    dataset_kind: main
+    models: [mistral_7b, qwen3_8b, gpt_oss_20b]
+    prompts: [rubric]
+    decoding: [hard, soft]
+    seeds: [42, 1024, 2026]
+    sample_size: 20
+    sample_seed: 2026
+    sample_by_stance:
+      support: 10
+      attack: 10
+    generation:
+      do_sample: true
+      temperature: 0.7
+      top_p: 0.95
+      repetition_penalty: 1.0
+      max_new_tokens: 512
+      thinking: false
+
+  main_study:
+    dataset: datasets/5.15Dataset/true_false_uncertain_gen_gpt-5_ver_sonnet-4-5.jsonl
+    dataset_kind: main
+    models: [mistral_7b, qwen3_8b, gpt_oss_20b]
+    prompts: [direct, role, rubric, role_rubric]
+    decoding: [hard]
+    seeds: [42, 1024, 2026]
+    sample_size: null
+    sample_seed: 2026
+    generation:
+      do_sample: true
+      temperature: 0.7
+      top_p: 0.95
+      repetition_penalty: 1.0
+      max_new_tokens: 512
+      thinking: false
+
+  reasoning_study:
+    dataset: datasets/5.15Dataset/true_false_uncertain_gen_gpt-5_ver_sonnet-4-5.jsonl
+    dataset_kind: main
+    models: [qwen3_8b, gpt_oss_20b]
+    prompts: [direct, role, rubric, role_rubric]
+    decoding: [soft]
+    seeds: [42, 1024, 2026]
+    sample_size: 50
+    sample_seed: 2026
+    sample_by_stance:
+      support: 25
+      attack: 25
+    generation:
+      do_sample: true
+      temperature: 0.7
+      top_p: 0.95
+      repetition_penalty: 1.0
+      max_new_tokens: 512
+      max_new_tokens_by_mode:
+        no_think: 1024
+        think: 4096
+      thinking: [false, true]
+
+  representation_study:
+    dataset: datasets/5.15Dataset/expanded_synonym_arguments_evaluation_tfu_150.jsonl
+    dataset_kind: representation
+    models: [mistral_7b, qwen3_8b, gpt_oss_20b]
+    prompts: [rubric]
+    decoding: [hard]
+    seeds: [42, 1024, 2026]
+    sample_size: 50
+    sample_seed: 2026
+    generation:
+      do_sample: true
+      temperature: 0.7
+      top_p: 0.95
+      repetition_penalty: 1.0
+      max_new_tokens: 12
+      thinking: false

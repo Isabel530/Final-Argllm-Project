@@ -1,0 +1,2 @@
+prompt_id,calibration_fit,external_refit,n_validation_pairs,n_external_pairs,n_external_topics,external_positive_rate,margin_uncertainty_auroc,margin_uncertainty_auprc,brier_validation_fitted,ece_validation_fitted
+p_53a4acbe525c,internal_validation_only,False,174,4925,18,0.43573604060913707,0.6223158175733525,0.5961343755929193,0.3104858568930188,0.2662921180657461

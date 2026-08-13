@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "gate_uses_accuracy": false,
+  "raw": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/e9_pilot.jsonl",
+  "raw_sha256": "1e69bf698fb24e1431a616d504f22461be1bc7c3d15177452da6f85ac11591b4",
+  "expected_rows": 128,
+  "observed_rows": 128,
+  "prompt_ids": [
+    "p_53a4acbe525c",
+    "p_83adf7318fd5"
+  ],
+  "seeds": [
+    42,
+    1024
+  ],
+  "pilot_topics": [
+    "Social media brings more harm than good",
+    "We should ban algorithmic trading"
+  ],
+  "parse_rate": 1.0,
+  "exact_format_rate": 1.0,
+  "failures": [],
+  "decision_rule": "Formal E9 may start only if completeness, identity, parse, and exact-format checks pass. Pilot accuracy is deliberately not calculated."
+}

@@ -1,0 +1,8 @@
+{
+  "prompt_ids": [
+    "p_53a4acbe525c"
+  ],
+  "uq_signal": "sampling_variance",
+  "rule": "maximum pre-specified conservative utility on validation",
+  "warning": "Freeze this prompt before running internal_test."
+}

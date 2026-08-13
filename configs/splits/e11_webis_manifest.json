@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "status": "locked_before_generation",
+  "source": {
+    "dataset": "Webis-ArgQuality-20",
+    "version": "1.0.0",
+    "doi": "10.5281/zenodo.3780049",
+    "license": "CC-BY-4.0",
+    "files": {
+      "full": {
+        "path": "datasets/external/webis_argquality20/source/webis-argquality20-full.csv",
+        "sha256": "b31796edd58dcb10960401d409ac9be0fd3d0d9465d2d2f673cb8dac1d4944e3"
+      },
+      "topics": {
+        "path": "datasets/external/webis_argquality20/source/webis-argquality20-topics.csv",
+        "sha256": "5afd781a9c190387e8e54bd1a1161d1409da48db5a8b5d8146502fc9d439a8bd"
+      },
+      "logical": {
+        "path": "datasets/external/webis_argquality20/source/webis-argquality20-pairwise-logical.csv",
+        "sha256": "94fd407e8ea8153b126e57d7c60c26a80dc6c05ef22bdb9ae5305439cb9768b2"
+      },
+      "rhetorical": {
+        "path": "datasets/external/webis_argquality20/source/webis-argquality20-pairwise-rhetorical.csv",
+        "sha256": "1d03d191dd1b1c1631c260b678d2a5bfd2566d5498cfe73f85c8350a829e965e"
+      },
+      "dialectical": {
+        "path": "datasets/external/webis_argquality20/source/webis-argquality20-pairwise-dialectical.csv",
+        "sha256": "c261b8aea1804b7ef0df7af6db6a7a2fe914a7e0c6df7424c4e99ddd017c67bb"
+      }
+    }
+  },
+  "selection": {
+    "require_is_argument": true,
+    "require_same_topic": true,
+    "require_same_stance": true,
+    "primary_gold": "majority_of_logical_rhetorical_dialectical",
+    "primary_scope": "majority_decisive",
+    "pilot_hash_namespace": "e11-webis-pilot-topic-v1",
+    "pilot_topics": [
+      10,
+      12
+    ],
+    "manual_selection": false,
+    "excluded_source_pairs": {
+      "cross_stance": 6859
+    }
+  },
+  "pilot": {
+    "topics": 2,
+    "topic_stance_groups": 4,
+    "unique_argument_generations_per_prompt_seed": 144,
+    "eligible_dimension_pairs": 830,
+    "majority_pairs": 708,
+    "majority_decisive_pairs": 639,
+    "majority_ties": 69,
+    "unanimous_pairs": 182,
+    "generation_path": "datasets/external/webis_argquality20/e11_pilot_groups.jsonl",
+    "generation_sha256": "08d3f04b232b26ae7f0e9dd372d1b27d30854c7556eae959c713c047e322d5bc",
+    "pairs_path": "datasets/external/webis_argquality20/e11_pilot_pairs.jsonl",
+    "pairs_sha256": "717bc16f4b6e56e11e92e390fa7763a1675169a00f5df48fda4ecc861acc0f01",
+    "candidate_registry": "results/uq_apo/candidates/e11_pilot_candidates.jsonl",
+    "candidate_registry_sha256": "ecfd20cf319d16b4fb215b385f4526b8aca66eae257f64e9cf383e56ba71f37e",
+    "excluded_from_formal": true
+  },
+  "formal": {
+    "topics": 18,
+    "topic_stance_groups": 36,
+    "unique_argument_generations_per_prompt_seed": 1125,
+    "eligible_dimension_pairs": 6263,
+    "majority_pairs": 5409,
+    "majority_decisive_pairs": 4925,
+    "majority_ties": 484,
+    "unanimous_pairs": 1489,
+    "generation_path": "datasets/external/webis_argquality20/e11_formal_groups.jsonl",
+    "generation_sha256": "f8475c93f8b4e8186d02942b13e95560e937bad1fb96a9e7bda8ffa4e2ea10ee",
+    "pairs_path": "datasets/external/webis_argquality20/e11_formal_pairs.jsonl",
+    "pairs_sha256": "7803216a536d736f0e2a2a598b6e3191a69966234f44bafceb537917338f6ec8",
+    "candidate_registry": "results/uq_apo/candidates/e11_three_prompts.jsonl",
+    "candidate_registry_sha256": "8a1362c85edafbf502a92bc48976b954e1d95d1b57ab1a6b18c4cc80297a7fea"
+  },
+  "analysis_lock": {
+    "independent_cluster": "topic_id",
+    "primary_scope": "majority_decisive",
+    "bootstrap_resamples": 10000,
+    "permutation_resamples": 100000,
+    "random_seed": 42,
+    "holm_family": "winner_vs_two_manual_baselines_within_scope_and_metric",
+    "estimate_seeds": [
+      42,
+      1024,
+      2026,
+      31415,
+      27182
+    ],
+    "heldout_seeds": [
+      16180,
+      57721,
+      65537,
+      99991,
+      104729
+    ],
+    "bayesian_confidence_thresholds": [
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "adaptive_checkpoints": [
+      3,
+      5,
+      7,
+      10
+    ],
+    "dirichlet_prior_concentration": 0.5
+  },
+  "interpretation_lock": {
+    "winner_is_frozen": true,
+    "external_results_may_change_winner": false,
+    "pilot_topics_excluded_from_formal": true,
+    "no_prompt_rewriting_after_pilot": true,
+    "confirmatory_claim": "Compare the already-frozen Qwen winner with Direct and Rubric on direct human pairwise argument-quality labels from previously unused topics."
+  },
+  "warning": "E11 uses direct human labels only for same-topic, same-stance, valid-argument pairs. Pilot topics are excluded from formal analysis. E11 cannot trigger prompt rewriting or replacement of the frozen winner."
+}

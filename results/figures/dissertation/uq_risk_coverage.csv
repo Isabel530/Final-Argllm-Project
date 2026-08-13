@@ -1,0 +1,11 @@
+signal,target,coverage,mean_risk,n_partitions
+margin_uncertainty,future error,0.1,0.0,252
+margin_uncertainty,future error,0.25,0.0,252
+margin_uncertainty,future error,0.5,0.00041050903119868636,252
+margin_uncertainty,future error,0.75,0.017826617826617826,252
+margin_uncertainty,future error,1.0,0.0786808976464149,252
+sampling_variance,future deviation,0.1,0.00204014939309057,252
+sampling_variance,future deviation,0.25,0.004120220057720058,252
+sampling_variance,future deviation,0.5,0.007445037401933954,252
+sampling_variance,future deviation,0.75,0.01155982905982906,252
+sampling_variance,future deviation,1.0,0.016977969348659003,252

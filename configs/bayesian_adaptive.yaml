@@ -1,0 +1,13 @@
+schema_version: 1
+status: post_freeze_exploratory
+winner_prompt_id: p_53a4acbe525c
+evaluation:
+  internal_test: results/uq_apo/raw/qwen_internal_test.jsonl
+  external_e9: results/uq_apo/raw/e9_external.jsonl
+seed_order: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+checkpoints: [3, 5, 7, 10]
+prior_concentration: 0.5
+tie_tolerance: 0.0
+confidence_thresholds: [0.60, 0.70, 0.80, 0.90]
+output_dir: results/uq_apo/processed/adaptive_sampling
+

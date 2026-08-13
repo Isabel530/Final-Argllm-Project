@@ -1,0 +1,18 @@
+{
+  "submitted_date": "2026-08-02",
+  "scheduler": "Slurm",
+  "jobs": [
+    {"job_id": 269428, "stage": "qwen_apo_search", "dependency": null},
+    {"job_id": 269429, "stage": "qwen_promotion_generation", "dependency": "afterok:269428"},
+    {"job_id": 269430, "stage": "promotion_analysis_select_two", "dependency": "afterok:269429"},
+    {"job_id": 269431, "stage": "qwen_validation_10_seed_generation", "dependency": "afterok:269430"},
+    {"job_id": 269432, "stage": "validation_uq_select_and_freeze", "dependency": "afterok:269431"},
+    {"job_id": 269433, "stage": "qwen_frozen_internal_test", "dependency": "afterok:269432"},
+    {"job_id": 269434, "stage": "mistral_frozen_prompt_transfer", "dependency": "afterok:269432"},
+    {"job_id": 269436, "stage": "qwen_and_mistral_final_analysis", "dependency": "afterok:269433,afterok:269434"}
+  ],
+  "cancelled_jobs": [
+    {"job_id": 269435, "reason": "Replaced before execution so the saved Slurm script also includes Mistral analysis."}
+  ],
+  "safety": "All downstream jobs use afterok dependencies. Frozen evaluations verify the SHA-256 freeze manifest before loading a model."
+}

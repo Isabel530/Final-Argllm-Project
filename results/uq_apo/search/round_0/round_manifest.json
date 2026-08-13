@@ -1,0 +1,64 @@
+{
+  "iteration": 0,
+  "screening_claim_ids": [
+    69,
+    48,
+    109,
+    7,
+    58,
+    9,
+    120,
+    3,
+    90,
+    41
+  ],
+  "screening_seeds": [
+    42,
+    1024,
+    2026
+  ],
+  "evaluated_prompt_ids": [
+    "p_0086c8edb3b1",
+    "p_26918ada0c0a",
+    "p_83adf7318fd5",
+    "p_da4eef59b8ac"
+  ],
+  "survivor_prompt_ids": [
+    "p_0086c8edb3b1",
+    "p_da4eef59b8ac",
+    "p_83adf7318fd5",
+    "p_26918ada0c0a"
+  ],
+  "proposal_prompt_ids": [
+    "p_b754a9a407f4",
+    "p_33906614e4ae",
+    "p_73a3df4d5cd4",
+    "p_4ce5afbfefa2",
+    "p_9b186ef9762d",
+    "p_5936c85da43d",
+    "p_5aa09530bfcc",
+    "p_53a4acbe525c",
+    "p_6e5d13a3221f",
+    "p_705f72465b14",
+    "p_e5f622efc026",
+    "p_42c927c4615e"
+  ],
+  "next_prompt_ids": [
+    "p_0086c8edb3b1",
+    "p_da4eef59b8ac",
+    "p_83adf7318fd5",
+    "p_26918ada0c0a",
+    "p_33906614e4ae",
+    "p_73a3df4d5cd4",
+    "p_4ce5afbfefa2",
+    "p_9b186ef9762d",
+    "p_5936c85da43d",
+    "p_5aa09530bfcc",
+    "p_53a4acbe525c",
+    "p_6e5d13a3221f",
+    "p_705f72465b14",
+    "p_e5f622efc026",
+    "p_42c927c4615e"
+  ],
+  "candidate_registry": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/search/candidates/iteration_1.jsonl"
+}

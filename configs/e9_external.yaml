@@ -1,0 +1,74 @@
+schema_version: 1
+
+source:
+  dataset: ibm-research/argument_quality_ranking_30k
+  revision: 590726b3765b1b90c5e53a17e3b1f77d92d3aa8a
+  split: test
+  csv: datasets/external/ibm_argument_quality_ranking_30k/test.csv
+  sha256: 18c0f0491e0206558f24dbe79b91901bd662e5ec2b1bd9d13ab740660b0c196f
+  paper: https://arxiv.org/abs/1911.11408
+  repository: https://huggingface.co/datasets/ibm-research/argument_quality_ranking_30k
+  license_note: >-
+    The Hugging Face metadata says CC-BY-3.0, while the body of the official
+    dataset card says CC-BY-SA-3.0. Report the stricter CC-BY-SA-3.0 term.
+
+preparation:
+  ranking_label: WA
+  secondary_label: MACE-P
+  minimum_stance_confidence: 0.80
+  pilot_topic_count: 2
+  pilot_hash_namespace: e9-pilot-topic-v1
+  broad_quantiles: [0.10, 0.3666666667, 0.6333333333, 0.90]
+  near_tie_central_fraction: [0.40, 0.60]
+  expected_arguments: 4
+  output_pilot: datasets/external/ibm_argument_quality_ranking_30k/e9_pilot.jsonl
+  output_formal: datasets/external/ibm_argument_quality_ranking_30k/e9_formal.jsonl
+  manifest: configs/splits/e9_external_manifest.json
+
+model: qwen3_8b
+generation:
+  decoding: hard
+  thinking: false
+  do_sample: true
+  temperature: 0.7
+  top_p: 0.95
+  repetition_penalty: 1.0
+  max_new_tokens: 12
+
+stages:
+  pilot:
+    dataset: datasets/external/ibm_argument_quality_ranking_30k/e9_pilot.jsonl
+    candidates: results/uq_apo/candidates/e9_pilot_candidates.jsonl
+    seeds: [42, 1024]
+    output: results/uq_apo/raw/e9_pilot.jsonl
+  formal:
+    dataset: datasets/external/ibm_argument_quality_ranking_30k/e9_formal.jsonl
+    candidates: results/uq_apo/candidates/e9_five_prompts.jsonl
+    seeds: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+    output: results/uq_apo/raw/e9_external.jsonl
+
+prompts:
+  winner: p_53a4acbe525c
+  manual:
+    direct: p_83adf7318fd5
+    role: p_da4eef59b8ac
+    rubric: p_0086c8edb3b1
+    role_rubric: p_26918ada0c0a
+
+analysis:
+  independent_cluster: source_topic
+  panels: [broad, near_tie]
+  primary_panel: broad
+  bootstrap_resamples: 10000
+  permutation_resamples: 100000
+  random_seed: 42
+  holm_family: within_panel_and_metric
+  uq_transfer:
+    continuous_signal: sampling_variance
+    continuous_target: future_absolute_deviation
+    binary_signal: margin_uncertainty
+    binary_target: future_reference_error
+    estimate_runs: 5
+    heldout_runs: 5
+    partition_mode: all
+    primary_calibration_policy: validation_fit_applied_without_external_refit

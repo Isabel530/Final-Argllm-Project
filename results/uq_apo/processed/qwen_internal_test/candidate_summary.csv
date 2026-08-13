@@ -1,0 +1,2 @@
+prompt_id,stage,n_claims,n_seeds,pairwise_accuracy,accuracy_se,score_variance,seed_flip_rate,brier,mean_tokens,mean_seconds,invalid_rate,conservative_utility,pareto_optimal,selected
+p_53a4acbe525c,internal_test,50,10,0.9416666666666668,0.01753680936030504,0.0009419444444444445,0.09,,5.885,0.3012125288254465,0.0,0.8687003258760244,True,True

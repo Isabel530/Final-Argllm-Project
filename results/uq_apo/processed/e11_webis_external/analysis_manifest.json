@@ -1,0 +1,44 @@
+{
+  "raw": {
+    "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/e11_webis_external.jsonl",
+    "sha256": "377e0de31c0607f578839684a33e013f489317bf760b3c94b273511ed87b5b47"
+  },
+  "validation_raw": {
+    "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/validation.jsonl",
+    "sha256": "d00d40e870f58d46931501739dd0bb5c922c80777c96a1dfe5d1639b50852c37"
+  },
+  "locked_data_manifest": {
+    "path": "/vol/bitbucket/xz3725/final-argllm-project/configs/splits/e11_webis_manifest.json",
+    "sha256": "0e0aa286cd6d78f26cdb93b0ddf8993c45189f3f8ac4b01146f7ab18e655e426"
+  },
+  "winner_id": "p_53a4acbe525c",
+  "baseline_ids": [
+    "p_83adf7318fd5",
+    "p_0086c8edb3b1"
+  ],
+  "primary_scope": "majority_decisive",
+  "independent_inference_unit": "topic_id",
+  "n_formal_topics": 18,
+  "n_formal_groups": 36,
+  "n_human_pairs": 6263,
+  "n_primary_pairs": 4925,
+  "uq_partition": {
+    "estimate_seeds": [
+      42,
+      1024,
+      2026,
+      31415,
+      27182
+    ],
+    "heldout_seeds": [
+      16180,
+      57721,
+      65537,
+      99991,
+      104729
+    ]
+  },
+  "calibration": "fit on internal validation; applied to E11 without refit",
+  "adaptive_policy": "empirical Bayesian pair-at-a-time transfer; no conformal guarantee",
+  "warning": "E11 cannot change or rewrite the frozen prompt. Selective adaptive accuracy must be reported with coverage and cost."
+}

@@ -1,0 +1,17 @@
+{
+  "raw": [
+    {
+      "path": "results/uq_apo/raw/full_train_audit.jsonl",
+      "sha256": "ab53f45513d5cbeb8cde72e460f9d9423c7a17cf8f350d9d83eeeca0dfb63ad7"
+    }
+  ],
+  "winner_id": "p_53a4acbe525c",
+  "baseline_ids": [
+    "p_26953e457823"
+  ],
+  "independent_unit": "claim",
+  "bootstrap_resamples": 10000,
+  "permutation_resamples": 100000,
+  "seed": 42,
+  "holm_family": "within scope and metric"
+}

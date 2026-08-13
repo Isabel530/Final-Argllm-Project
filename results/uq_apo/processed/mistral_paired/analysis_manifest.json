@@ -1,0 +1,18 @@
+{
+  "raw": [
+    {
+      "path": "results/uq_apo/raw/mistral_transfer.jsonl",
+      "sha256": "d43a80e7a8b2b1327c36f490401c580bd9f736812c449e8f3ea7e487c6f6cd0f"
+    }
+  ],
+  "winner_id": "p_53a4acbe525c",
+  "baseline_ids": [
+    "p_83adf7318fd5",
+    "p_0086c8edb3b1"
+  ],
+  "independent_unit": "claim",
+  "bootstrap_resamples": 10000,
+  "permutation_resamples": 100000,
+  "seed": 42,
+  "holm_family": "within scope and metric"
+}

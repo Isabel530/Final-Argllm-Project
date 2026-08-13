@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "source": {
+    "dataset": "ibm-research/argument_quality_ranking_30k",
+    "revision": "590726b3765b1b90c5e53a17e3b1f77d92d3aa8a",
+    "split": "test",
+    "path": "datasets/external/ibm_argument_quality_ranking_30k/test.csv",
+    "sha256": "18c0f0491e0206558f24dbe79b91901bd662e5ec2b1bd9d13ab740660b0c196f",
+    "rows": 5818,
+    "topics": 15
+  },
+  "selection": {
+    "ranking_label": "WA",
+    "minimum_stance_confidence": 0.8,
+    "pilot_hash_namespace": "e9-pilot-topic-v1",
+    "pilot_topics": [
+      "Social media brings more harm than good",
+      "We should ban algorithmic trading"
+    ],
+    "broad_quantiles": [
+      0.1,
+      0.3666666667,
+      0.6333333333,
+      0.9
+    ],
+    "near_tie_central_fraction": [
+      0.4,
+      0.6
+    ],
+    "manual_selection": false
+  },
+  "pilot": {
+    "path": "datasets/external/ibm_argument_quality_ranking_30k/e9_pilot.jsonl",
+    "sha256": "4941d8b758eede177f1bf929eb17d81337dd44fe998bca3d43e22c316a35aa57",
+    "records": 8,
+    "topics": 2,
+    "excluded_from_formal": true,
+    "candidate_registry": "results/uq_apo/candidates/e9_pilot_candidates.jsonl",
+    "candidate_registry_sha256": "ecfd20cf319d16b4fb215b385f4526b8aca66eae257f64e9cf383e56ba71f37e"
+  },
+  "formal": {
+    "path": "datasets/external/ibm_argument_quality_ranking_30k/e9_formal.jsonl",
+    "sha256": "e77fd9fb9eb790ad993c8931e48733046b63f14fe934c85a885bc95600edda4e",
+    "records": 52,
+    "topics": 13,
+    "source_groups": 26,
+    "panels": {
+      "broad": 26,
+      "near_tie": 26
+    },
+    "candidate_registry": "results/uq_apo/candidates/e9_five_prompts.jsonl",
+    "candidate_registry_sha256": "ae6bd73f71f6c3a9237e5638be990ea87d835f6970cfc00ac8d7990bc2fcc646"
+  },
+  "quality_gap_summary": {
+    "broad": {
+      "mean_adjacent_gap": 0.13968673687179486,
+      "mean_total_span": 0.4190602106153846
+    },
+    "near_tie": {
+      "mean_adjacent_gap": 0.0005540768974358965,
+      "mean_total_span": 0.0016622306923076895
+    }
+  },
+  "warning": "Pilot topics are fully excluded from formal E9. Formal prompt selection is frozen; external results cannot trigger prompt rewriting or winner replacement."
+}

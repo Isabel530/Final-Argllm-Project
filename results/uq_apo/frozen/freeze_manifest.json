@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-08-04T04:03:13.299375+00:00",
+  "locked_after_validation": true,
+  "winner_prompt_id": "p_53a4acbe525c",
+  "winner_instruction": "Evaluate each reference by verifying:\n\n- **Specificity** – does it provide direct facts, data, or concrete examples that address the claim?\n- **Relevance** – is the evidence directly linked to the claim or merely tangential?\n- **Source credibility** – is the reference from a reputable, verifiable source?\n- **Avoid generic statements** such as \"many people believe\" or \"it is known\" unless a reliable source backs them.\n\nReferences that fail these checks should lower the argument’s score. <<RELATION_RULE>>",
+  "selection_rule": "maximum pre-specified conservative utility on validation",
+  "uq_signal": "sampling_variance",
+  "inputs": {
+    "candidate_registry": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/candidates/promotion_survivors.jsonl",
+      "sha256": "d2802982ea61dbcbffa032edb4a970ec6dbe0c248dfd71a4286f46208fff8d9b"
+    },
+    "selection": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/processed/final_selection/selected_prompt_ids.json",
+      "sha256": "c7adb8ec65b24252e3c7f4efc82f8b657b5419bdfd394a689f4d820620201be5"
+    },
+    "baseline_registry": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/candidates/iteration_0.jsonl",
+      "sha256": "d2ed3620535c4077afe78667927810d78a9bd98eb090ad77b83ec0ed86909a07"
+    }
+  },
+  "registries": {
+    "qwen_internal_test": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/frozen/qwen_frozen_winner.jsonl",
+      "sha256": "ae7fe03c20adbef7cee02e48e06b5bc7f19b25dc0d4142babc30bd921319198a",
+      "prompt_ids": [
+        "p_53a4acbe525c"
+      ]
+    },
+    "cross_model_transfer": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/frozen/mistral_transfer_prompts.jsonl",
+      "sha256": "8a1362c85edafbf502a92bc48976b954e1d95d1b57ab1a6b18c4cc80297a7fea",
+      "prompt_ids": [
+        "p_83adf7318fd5",
+        "p_0086c8edb3b1",
+        "p_53a4acbe525c"
+      ]
+    }
+  },
+  "note": "No prompt rewriting or reselection is permitted after this manifest. If the winner is Direct or Rubric, the transfer registry contains two unique prompts rather than duplicating the winner."
+}

@@ -1,0 +1,18 @@
+{
+  "raw_path": "results/uq_apo/raw/e11_webis_pilot.jsonl",
+  "raw_sha256": "24064881fccbd96f7c2c3a8748ddbe3285554cc06bc584bfb566326eaf011c25",
+  "expected_rows": 576,
+  "observed_rows": 576,
+  "valid_score_rate": 1.0,
+  "exact_format_rate": 1.0,
+  "observed_topics": [
+    10,
+    12
+  ],
+  "expected_topics": [
+    10,
+    12
+  ],
+  "pass": true,
+  "decision_rule": "Formal E11 may start only if all expected rows are present, every hard-decoded score is valid/exact, and only the pre-excluded pilot topics were used."
+}

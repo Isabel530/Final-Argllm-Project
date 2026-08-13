@@ -1,0 +1,72 @@
+{
+  "iteration": 2,
+  "screening_claim_ids": [
+    103,
+    108,
+    84,
+    71,
+    120,
+    124,
+    78,
+    148,
+    66,
+    116
+  ],
+  "screening_seeds": [
+    42,
+    1024,
+    2026
+  ],
+  "evaluated_prompt_ids": [
+    "p_0e31d9eb4d71",
+    "p_43389ff49064",
+    "p_4a02c5dfbe8b",
+    "p_53a4acbe525c",
+    "p_5aa09530bfcc",
+    "p_5abe0008f5b6",
+    "p_621fcbba8c6a",
+    "p_83adf7318fd5",
+    "p_a7a59d981fb9",
+    "p_cbeb618ecd44",
+    "p_e5f622efc026",
+    "p_fa23438a7aea"
+  ],
+  "survivor_prompt_ids": [
+    "p_5aa09530bfcc",
+    "p_53a4acbe525c",
+    "p_fa23438a7aea",
+    "p_4a02c5dfbe8b"
+  ],
+  "proposal_prompt_ids": [
+    "p_c86cd1645646",
+    "p_d5c56ef32b33",
+    "p_26953e457823",
+    "p_923739d6859b",
+    "p_60a42baa4143",
+    "p_1017784cc5b5",
+    "p_bd14b99d938a",
+    "p_b73f63f4cb9f",
+    "p_5bc28ded6922",
+    "p_ff3d106a767a",
+    "p_0034d798aaea",
+    "p_73b2fcbb0f85"
+  ],
+  "next_prompt_ids": [
+    "p_5aa09530bfcc",
+    "p_53a4acbe525c",
+    "p_fa23438a7aea",
+    "p_4a02c5dfbe8b",
+    "p_c86cd1645646",
+    "p_d5c56ef32b33",
+    "p_26953e457823",
+    "p_60a42baa4143",
+    "p_1017784cc5b5",
+    "p_bd14b99d938a",
+    "p_b73f63f4cb9f",
+    "p_5bc28ded6922",
+    "p_ff3d106a767a",
+    "p_0034d798aaea",
+    "p_73b2fcbb0f85"
+  ],
+  "candidate_registry": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/search/candidates/iteration_3.jsonl"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "parent_id": "p_83adf7318fd5",
+    "instruction": "You are an LLM tasked with judging the strength of an argument.  For each reference: 1) Verify that it directly addresses the claim and the stance (support or attack). 2) Ensure the reasoning is specific, not generic, and ties the claim to concrete evidence or logical steps. 3) Reject vague statements such as \"any box can contain everything that can be boxed\" or broad analogies that do not logically follow from the claim.  4) Follow the stance‑specific rule <<RELATION_RULE>> to determine whether the reference truly supports or attacks the claim.  5) Provide a numerical score (0–100) and the exact response format `Score: <integer>`.",
+    "reason": "candidate instruction must not rewrite the frozen task, input fields, or scale"
+  },
+  {
+    "parent_id": "p_83adf7318fd5",
+    "instruction": "You are an LLM evaluating argument strength.  For each reference: 1) Check the factual accuracy of every claim made in the reference. 2) Verify that the evidence cited is credible and directly linked to the claim.  3) Ensure the argument’s logic flows from evidence to conclusion without leaps.  4) Follow the stance‑specific rule <<RELATION_RULE>> to see if the reference is meant to support or refute the claim.  5) Output a single integer score on the 0–100 scale and the exact response `Score: <integer>`.",
+    "reason": "candidate instruction must not rewrite the frozen task, input fields, or scale"
+  },
+  {
+    "parent_id": "p_83adf7318fd5",
+    "instruction": "You are an LLM tasked with scoring argument strength.  When evaluating a reference: 1) Identify the specific elements of the claim that the reference addresses.  2) Confirm that each point in the reference is relevant to those elements and not a tangential or unrelated fact.  3) Avoid over‑generalizations; if a statement is too broad, flag it as weak.  4) Use the stance‑specific rule <<RELATION_RULE>> to decide if the reference is a support or an attack.  5) Deliver only the final integer score in the required format `Score: <integer>`.",
+    "reason": "candidate instruction must not rewrite the frozen task, input fields, or scale"
+  }
+]

@@ -1,0 +1,35 @@
+schema_version: 1
+
+# E10 is a post-freeze exploratory analysis. It cannot change the APO winner
+# and does not retroactively become part of the E5--E9 confirmatory protocol.
+status: post_freeze_exploratory
+winner_prompt_id: p_53a4acbe525c
+
+calibration:
+  dataset: validation
+  raw: results/uq_apo/raw/validation.jsonl
+
+evaluation:
+  internal_test:
+    raw: results/uq_apo/raw/qwen_internal_test.jsonl
+  external_e9:
+    raw: results/uq_apo/raw/e9_external.jsonl
+
+seed_order: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+checkpoints: [3, 5, 7, 10]
+fixed_budgets: [3, 5, 10]
+
+bayesian:
+  preference_outcomes: [worse_wins, tie, better_wins]
+  prior: symmetric_dirichlet
+  prior_concentration: 0.5
+  tie_tolerance: 0.0
+
+conformal:
+  miscoverage_levels: [0.05, 0.10, 0.20]
+  calibration_unit: claim
+  score: maximum_true_label_nonconformity_over_pairs_and_checkpoints
+  assumption: calibration_and_test_claims_are_exchangeable
+
+output_dir: results/uq_apo/processed/adaptive_sampling
+

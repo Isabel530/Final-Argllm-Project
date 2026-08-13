@@ -1,0 +1,30 @@
+models:
+  mistral_7b:
+    name: mistralai/Mistral-7B-Instruct-v0.3
+    revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+    cache_dir: /vol/bitbucket/xz3725/huggingface_cache
+    device_map: auto
+    torch_dtype: bfloat16
+    quantization: none
+    trust_remote_code: true
+    thinking_modes: [false]
+
+  qwen3_8b:
+    name: Qwen/Qwen3-8B
+    revision: b968826d9c46dd6066d109eabc6255188de91218
+    cache_dir: /vol/bitbucket/xz3725/huggingface_cache
+    device_map: auto
+    torch_dtype: bfloat16
+    quantization: none
+    trust_remote_code: true
+    thinking_modes: [false, true]
+
+  gpt_oss_20b:
+    name: openai/gpt-oss-20b
+    revision: 6cee5e81ee83917806bbde320786a8fb61efebee
+    cache_dir: /vol/bitbucket/xz3725/huggingface_cache
+    device_map: auto
+    torch_dtype: bfloat16
+    quantization: none
+    trust_remote_code: true
+    thinking_modes: [false, true]

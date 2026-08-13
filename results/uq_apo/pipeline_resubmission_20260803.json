@@ -1,0 +1,26 @@
+{
+  "resubmitted_date": "2026-08-03",
+  "reason": "Initial search job 269428 failed after round-0 scoring because GPT-OSS output parsing selected a JSON object without a proposals list.",
+  "recovery": {
+    "checkpoint_reused": "results/uq_apo/search/round_0/screening_raw.jsonl",
+    "completed_rows_reused": 480,
+    "parser_changes": [
+      "prefer a later JSON object containing proposals",
+      "accept a top-level proposal list",
+      "retry structured generation up to three times with deterministic alternate seeds",
+      "isolate a persistently invalid parent and retain raw attempts in the audit output"
+    ],
+    "tests": "68 passed"
+  },
+  "jobs": [
+    {"job_id": 269858, "stage": "qwen_apo_search_resume", "dependency": null},
+    {"job_id": 269859, "stage": "qwen_promotion_generation", "dependency": "afterok:269858"},
+    {"job_id": 269860, "stage": "promotion_analysis_select_two", "dependency": "afterok:269859"},
+    {"job_id": 269861, "stage": "qwen_validation_10_seed_generation", "dependency": "afterok:269860"},
+    {"job_id": 269862, "stage": "validation_uq_select_and_freeze", "dependency": "afterok:269861"},
+    {"job_id": 269863, "stage": "qwen_frozen_internal_test", "dependency": "afterok:269862"},
+    {"job_id": 269864, "stage": "mistral_frozen_prompt_transfer", "dependency": "afterok:269862"},
+    {"job_id": 269865, "stage": "qwen_and_mistral_final_analysis", "dependency": "afterok:269863,afterok:269864"}
+  ],
+  "superseded_jobs": [269428, 269429, 269430, 269431, 269432, 269433, 269434, 269436]
+}

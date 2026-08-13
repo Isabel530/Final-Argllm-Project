@@ -1,0 +1,68 @@
+{
+  "status": "post_freeze_exploratory",
+  "winner_prompt_id": "p_53a4acbe525c",
+  "inputs": {
+    "calibration": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/validation.jsonl",
+      "sha256": "d00d40e870f58d46931501739dd0bb5c922c80777c96a1dfe5d1639b50852c37"
+    },
+    "internal_test": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/qwen_internal_test.jsonl",
+      "sha256": "34a261a45f77e588a4c53c4e64480003121d1a536411248fcabb4fc90ac02547"
+    },
+    "external_e9": {
+      "path": "/vol/bitbucket/xz3725/final-argllm-project/results/uq_apo/raw/e9_external.jsonl",
+      "sha256": "e7f5235ac8cae730606c9935142c2d929b8834c304ae2ce0ae7716c25505a2f4"
+    }
+  },
+  "seed_order": [
+    42,
+    1024,
+    2026,
+    31415,
+    27182,
+    16180,
+    57721,
+    65537,
+    99991,
+    104729
+  ],
+  "checkpoints": [
+    3,
+    5,
+    7,
+    10
+  ],
+  "fixed_budgets": [
+    3,
+    5,
+    10
+  ],
+  "prior": {
+    "preference_outcomes": [
+      "worse_wins",
+      "tie",
+      "better_wins"
+    ],
+    "prior": "symmetric_dirichlet",
+    "prior_concentration": 0.5,
+    "tie_tolerance": 0.0
+  },
+  "conformal": {
+    "miscoverage_levels": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "calibration_unit": "claim",
+    "score": "maximum_true_label_nonconformity_over_pairs_and_checkpoints",
+    "assumption": "calibration_and_test_claims_are_exchangeable"
+  },
+  "n_calibration_claims": 29,
+  "warnings": [
+    "This analysis was designed after E5--E9 results were inspected and is exploratory.",
+    "Conformal coverage relies on claim exchangeability; E9 domain shift can violate it.",
+    "Claim-max calibration targets simultaneous label-set coverage, not conditional selective risk.",
+    "The frozen APO winner cannot be changed by this analysis."
+  ]
+}

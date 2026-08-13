@@ -1,0 +1,45 @@
+{
+  "protocol_lock": "configs/supplementary_lock_20260804.yaml",
+  "submitted_at": "2026-08-04T09:57:25+01:00",
+  "generation_jobs": {
+    "qwen_manual_controls": {
+      "job_id": 269987,
+      "expected_rows": 8000,
+      "output": "results/uq_apo/raw/qwen_manual_controls.jsonl",
+      "design": "4 manual prompts x 50 internal-test claims x 4 arguments x 10 seeds"
+    },
+    "full_train_audit": {
+      "job_id": 269989,
+      "expected_rows": 2800,
+      "output": "results/uq_apo/raw/full_train_audit.jsonl",
+      "design": "2 promotion survivors x 70 APO-training claims x 4 arguments x 5 seeds"
+    }
+  },
+  "dependent_analysis_jobs": {
+    "qwen_manual_controls": {
+      "job_id": 269988,
+      "dependency": "afterok:269987"
+    },
+    "full_train_audit": {
+      "job_id": 269990,
+      "dependency": "afterok:269989"
+    }
+  },
+  "completed_locally": {
+    "qwen_internal_test_analysis": [
+      "results/uq_apo/processed/qwen_internal_test/candidate_summary.csv",
+      "results/uq_apo/processed/qwen_internal_test_uq/pair_uq_summary.csv",
+      "results/uq_apo/processed/qwen_internal_test_uq/argument_uq_summary.csv"
+    ],
+    "mistral_paired_analysis": [
+      "results/uq_apo/processed/mistral_paired/prompt_summary.csv",
+      "results/uq_apo/processed/mistral_paired/paired_contrasts.csv"
+    ]
+  },
+  "cancelled_as_redundant": [269865, 269992, 269993],
+  "notes": [
+    "The cluster sbatch wrapper automatically assigns one GPU even to analysis-only jobs.",
+    "No generation job was cancelled or modified.",
+    "The full-training audit is post-selection and cannot change the frozen winner."
+  ]
+}

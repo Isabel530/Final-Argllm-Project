@@ -1,0 +1,44 @@
+{
+  "dataset": "ibm-research/argument_quality_ranking_30k",
+  "revision": "590726b3765b1b90c5e53a17e3b1f77d92d3aa8a",
+  "source_sha256": "18c0f0491e0206558f24dbe79b91901bd662e5ec2b1bd9d13ab740660b0c196f",
+  "formal_dataset_sha256": "e77fd9fb9eb790ad993c8931e48733046b63f14fe934c85a885bc95600edda4e",
+  "protocol": "configs/e9_external.yaml",
+  "manifest": "configs/splits/e9_external_manifest.json",
+  "jobs": {
+    "excluded_pilot_and_gate": {
+      "job_id": 270014,
+      "partition": "a30",
+      "expected_rows": 128,
+      "status": "completed_gate_pass",
+      "observed_rows": 128,
+      "parse_rate": 1.0,
+      "exact_format_rate": 1.0,
+      "raw_sha256": "1e69bf698fb24e1431a616d504f22461be1bc7c3d15177452da6f85ac11591b4"
+    },
+    "formal_external_test": {
+      "job_id": 270016,
+      "partition": "a40",
+      "dependency": "afterok:270014",
+      "time_limit": "12:00:00",
+      "expected_rows": 10400
+    },
+    "formal_analysis": {
+      "job_id": 270017,
+      "dependency": "afterok:270016"
+    }
+  },
+  "frozen_winner": "p_53a4acbe525c",
+  "manual_baselines": [
+    "p_83adf7318fd5",
+    "p_da4eef59b8ac",
+    "p_0086c8edb3b1",
+    "p_26918ada0c0a"
+  ],
+  "independent_inference_unit": "source_topic",
+  "formal_topics": 13,
+  "formal_records": 52,
+  "primary_panel": "broad",
+  "secondary_panel": "near_tie",
+  "external_results_may_change_winner": false
+}

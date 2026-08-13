@@ -1,0 +1,13 @@
+study,model,prompt,decoding,thinking,n_generations,n_exact_format,format_compliance_rate,n_extractable_scores,score_extraction_rate,n_hit_max_new_tokens,truncation_rate,mean_generated_tokens,max_generated_tokens,mean_generation_seconds
+main_study,gpt_oss_20b,direct,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.0,5,0.4349384693305427
+main_study,gpt_oss_20b,role,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.0,5,0.3796989157326078
+main_study,gpt_oss_20b,role_rubric,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.0,5,0.5256140828911335
+main_study,gpt_oss_20b,rubric,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.0,5,0.48771451508795105
+main_study,mistral_7b,direct,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.855145413870246,7,0.20156512862114107
+main_study,mistral_7b,role,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.909955257270694,7,0.2054235263919287
+main_study,mistral_7b,role_rubric,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.96420581655481,7,0.23512686020199844
+main_study,mistral_7b,rubric,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.884228187919463,7,0.23034159925149575
+main_study,qwen3_8b,direct,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.913870246085011,7,0.2750005921717708
+main_study,qwen3_8b,role,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.936241610738255,7,0.27582337087519276
+main_study,qwen3_8b,role_rubric,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.966442953020135,7,0.2989313818753428
+main_study,qwen3_8b,rubric,hard,False,1788,1788,1.0,1788,1.0,0,0.0,5.955816554809844,7,0.29341860415837967

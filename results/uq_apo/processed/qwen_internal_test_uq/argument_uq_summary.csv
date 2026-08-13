@@ -1,0 +1,5 @@
+prompt_id,signal,n_partitions,n_claims,target,mean_spearman,mean_aurc
+p_53a4acbe525c,sampling_mad,252,50,future_absolute_deviation,0.19257024887984836,0.01341566753102911
+p_53a4acbe525c,sampling_range,252,50,future_absolute_deviation,0.6763547859068125,0.0051512648025744375
+p_53a4acbe525c,sampling_variance,252,50,future_absolute_deviation,0.6867337564320459,0.005059993850865365
+p_53a4acbe525c,score_option_entropy,252,50,future_absolute_deviation,0.684562327341773,0.0053236161810807855

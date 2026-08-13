@@ -1,0 +1,20 @@
+{
+  "submitted_at_local_date": "2026-08-04",
+  "protocol": "configs/e11_webis_external.yaml",
+  "lock_manifest": "configs/splits/e11_webis_manifest.json",
+  "pilot_job_id": 270198,
+  "formal_job_id": 270199,
+  "analysis_job_id": 270200,
+  "dependencies": {
+    "formal": "afterok:270198",
+    "analysis": "afterok:270199"
+  },
+  "estimated_pilot_start_at_submission": "2026-08-05T18:00:00 Europe/London",
+  "status_at_submission": {
+    "pilot": "PENDING_PRIORITY",
+    "formal": "PENDING_DEPENDENCY",
+    "analysis": "PENDING_DEPENDENCY"
+  },
+  "e10_status": "implemented_and_analysed_post_freeze_exploratory",
+  "warning": "E11 results cannot trigger prompt rewriting or replacement of the frozen winner."
+}

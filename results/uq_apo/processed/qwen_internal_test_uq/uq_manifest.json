@@ -1,0 +1,22 @@
+{
+  "stage": "internal_test",
+  "seeds": [
+    42,
+    1024,
+    2026,
+    31415,
+    27182,
+    16180,
+    57721,
+    65537,
+    99991,
+    104729
+  ],
+  "estimate_runs": 5,
+  "heldout_runs": 5,
+  "partition_mode": "all",
+  "n_partitions": 252,
+  "n_pair_rows": 75600,
+  "n_argument_rows": 50400,
+  "warning": "The 252 seed partitions are repeated views of the same claims, not 252 independent datasets."
+}

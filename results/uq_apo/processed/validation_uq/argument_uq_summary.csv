@@ -1,0 +1,9 @@
+prompt_id,signal,n_partitions,n_claims,target,mean_spearman,mean_aurc
+p_26953e457823,sampling_mad,252,29,future_absolute_deviation,0.20328564753849784,0.01817868714267036
+p_26953e457823,sampling_range,252,29,future_absolute_deviation,0.6550889191580093,0.007808907725792103
+p_26953e457823,sampling_variance,252,29,future_absolute_deviation,0.6724812290521842,0.00750770622504522
+p_26953e457823,score_option_entropy,252,29,future_absolute_deviation,0.6225078454329119,0.008675777051244213
+p_53a4acbe525c,sampling_mad,252,29,future_absolute_deviation,0.25946390989744794,0.016842775380426694
+p_53a4acbe525c,sampling_range,252,29,future_absolute_deviation,0.6619637990796096,0.006814456000014042
+p_53a4acbe525c,sampling_variance,252,29,future_absolute_deviation,0.6637796295402244,0.006607050586816422
+p_53a4acbe525c,score_option_entropy,252,29,future_absolute_deviation,0.6425078706392614,0.0072280739880334595

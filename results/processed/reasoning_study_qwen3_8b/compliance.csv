@@ -1,0 +1,9 @@
+study,model,prompt,decoding,thinking,n_generations,n_exact_format,format_compliance_rate,n_extractable_scores,score_extraction_rate,n_hit_max_new_tokens,truncation_rate,mean_generated_tokens,max_generated_tokens,mean_generation_seconds
+reasoning_study,qwen3_8b,direct,soft,False,600,600,1.0,600,1.0,0,0.0,5.9366666666666665,7,0.3010610831187417
+reasoning_study,qwen3_8b,direct,soft,True,600,600,1.0,600,1.0,0,0.0,734.8966666666666,2860,32.96086543943422
+reasoning_study,qwen3_8b,role,soft,False,600,600,1.0,600,1.0,0,0.0,5.908333333333333,7,0.2692221260854664
+reasoning_study,qwen3_8b,role,soft,True,600,600,1.0,600,1.0,0,0.0,673.0416666666666,2959,30.08726635751004
+reasoning_study,qwen3_8b,role_rubric,soft,False,600,595,0.9916666666666667,600,1.0,0,0.0,7.6433333333333335,347,0.37186739784587797
+reasoning_study,qwen3_8b,role_rubric,soft,True,600,600,1.0,600,1.0,0,0.0,601.3366666666667,2476,27.145905280589748
+reasoning_study,qwen3_8b,rubric,soft,False,600,600,1.0,600,1.0,0,0.0,5.9366666666666665,7,0.28846410802099853
+reasoning_study,qwen3_8b,rubric,soft,True,600,600,1.0,600,1.0,0,0.0,642.93,2491,29.099630290598142

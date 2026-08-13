@@ -1,0 +1,115 @@
+schema_version: 1
+
+dataset: datasets/5.15Dataset/true_false_uncertain_gen_gpt-5_ver_sonnet-4-5.jsonl
+locked_split: configs/splits/uq_apo_claim_splits.json
+split_seed: 20260802
+split_sizes:
+  apo_train: 70
+  apo_validation: 29
+  internal_test: 50
+
+# Important: this internal split prevents leakage inside the new algorithm,
+# but the 149 source claims were inspected in earlier dissertation analyses.
+# A genuinely external argument-ranking dataset is still required for the
+# strongest generalisation claim.
+internal_holdout_is_pristine: false
+
+task_model: qwen3_8b
+optimizer_model: gpt_oss_20b
+
+generation:
+  decoding: hard
+  thinking: false
+  do_sample: true
+  temperature: 0.7
+  top_p: 0.95
+  repetition_penalty: 1.0
+  max_new_tokens: 12
+
+stages:
+  # Three seeds are deliberate: two runs only show same/different, whereas
+  # three expose unanimous versus 2--1 preference patterns. This remains a
+  # cheap search proxy, not the final UQ estimate.
+  search_screening:
+    split: apo_train
+    claims: 10
+    balanced_by_stance: true
+    rotate_claims_each_iteration: true
+    seeds: [42, 1024, 2026]
+  promotion:
+    split: apo_train
+    claims: 30
+    balanced_by_stance: true
+    seeds: [42, 1024, 2026, 31415, 27182]
+  train_full:
+    split: apo_train
+    claims: 70
+    seeds: [42, 1024, 2026, 31415, 27182]
+  validation:
+    split: apo_validation
+    claims: 29
+    seeds: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+  internal_test:
+    split: internal_test
+    claims: 50
+    seeds: [42, 1024, 2026, 31415, 27182, 16180, 57721, 65537, 99991, 104729]
+
+uq:
+  estimate_runs: 5
+  heldout_runs: 5
+  seed_partition_mode: all  # C(10, 5) = 252 estimate/held-out partitions
+  crossfit_folds: 5
+  pair_signals:
+    - sampling_variance
+    - sampling_range
+    - sampling_mad
+    - score_option_entropy
+    - preference_entropy
+    - pair_disagreement_probability
+    - margin_uncertainty
+  argument_signals:
+    - sampling_variance
+    - sampling_range
+    - sampling_mad
+    - score_option_entropy
+  binary_target: future_reference_error
+  continuous_target: future_absolute_deviation
+
+search:
+  rounds: 3
+  population_size: 4
+  proposals_per_parent: 3
+  survivors_after_screening: 4
+  survivors_after_promotion: 2
+  final_prompts_after_validation: 1
+  failure_representatives: 8
+  failure_similarity_threshold: 0.72
+  candidate_similarity_threshold: 0.92
+  embedding:
+    backend: transformer
+    model_name: sentence-transformers/all-MiniLM-L6-v2
+    revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+    cache_dir: /vol/bitbucket/xz3725/huggingface_cache
+    device: cpu
+    batch_size: 32
+    max_length: 512
+  optimizer_generation:
+    proposal_max_new_tokens: 2048
+    temperature: 0.7
+    top_p: 0.95
+
+selection:
+  accuracy_lcb_z: 1.96
+  flip_weight: 0.15
+  variance_weight: 0.10
+  brier_weight: 0.10
+  invalid_weight: 0.25
+  token_budget: 50
+  cost_weight: 0.02
+
+external_validation:
+  representation_robustness_dataset: datasets/5.15Dataset/expanded_synonym_arguments_evaluation_tfu_150.jsonl
+  note: >-
+    This derived representation dataset tests paraphrase/expansion sensitivity,
+    not external ranking accuracy. Add an independent human-ranked dataset for
+    a genuine external generalisation test.
